@@ -1,0 +1,36 @@
+import  {useState} from 'react'
+import { useNavigate } from 'react-router-dom';
+
+
+
+export const SignupHook = ()=>{
+    const Navigate = useNavigate()
+
+    const [isLoading , setIsLodaing] = useState(null);
+
+    const signUp = async  (user )=>{
+        setIsLodaing(true)
+        try{
+        const res = await fetch("http://localhost:4000/api/user/signup",{
+            method : "POST" ,
+            headers : {"Content-Type" : "application/json"} ,
+            body : JSON.stringify(user)
+
+        })
+        // console.log(res);
+        const json = await res.json();
+        // console.log(json);
+        if(json.succeed){
+            Navigate(json.redirect)
+        }
+        if(res.ok || res.statusText.includes("Error") || res.statusText.includes("Bad") || res.status === 401){
+            setIsLodaing(false);
+        }
+    }
+    catch(err){
+        // console.log(err);
+    }
+
+    }
+    return {isLoading , signUp}
+}

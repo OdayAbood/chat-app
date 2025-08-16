@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.link-nav{
+    @apply text-white w-fit flex items-center h-11 font-bold ;
+}
+.squre{
+    @apply w-28 h-28 bg-pink-800 hover:bg-pink-950
+}
+.form-input{
+    @apply bg-white rounded-md border-pink-900 border-2 w-80 mt-4 p-2 box-border
+        text-pink-500 focus:outline-none font-bold ;
+}
+.form-label{
+    @apply text-pink-700 text-xl block mt-5 relative left-1/2 -translate-x-1/2 font-bold;
+}
+.cont{
+    @apply flex justify-center
+}
+.form{
+    @apply w-full h-full border-2 border-pink-500 rounded 
+}
+.btn {
+    @apply w-20 h-10 border-2 border-pink-600 text-pink-600 rounded-md
+        hover:bg-pink-600 hover:text-white transition hover:shadow-pink-600
+            relative left-1/2 mt-5 -translate-x-1/2 hover:scale-75 font-bold
+}
+.messageSender{
+    @apply md:w-80 rounded-lg bg-pink-300 text-pink-800 flex box-border p-3 ml-3 w-64 mr-3 relative 
+    transition
+} 
+.messageReciever{
+    @apply md:w-80 rounded-lg bg-pink-200 text-pink-800 flex box-border p-3 ml-3 w-64 mr-3 relative 
+     transition
+}
+.left{
+    left:85%;
+}
+.width{
+    width: 400px;
+}
+.height { 
+    height: calc(100vh - 40px);
+}
