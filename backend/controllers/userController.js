@@ -53,7 +53,10 @@ const signin = async (req , res )=>{
         const match =await bcrypt.compare(password , checkIfExist.password);
         if(match){
             const token = createToken(checkIfExist._id);
-            res.cookie("jwt" , token , {httpOnly : true , maxAge : 1000 * 60 * 60 * 24 * 7});
+            res.cookie("jwt" , token , {httpOnly : true , 
+                secure: process.env.NODE_ENV ==="production" ,
+                sameSite : "None", 
+                maxAge : 1000 * 60 * 60 * 24 * 7});
 
             // console.log("req.cookie :",req.cookies.jwt);
             

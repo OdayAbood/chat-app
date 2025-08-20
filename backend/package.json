@@ -9,16 +9,21 @@
     "mongoose": "^8.16.5",
     "socket.io": "^4.8.1"
   },
-  "name": "c",
+  "name": "backend",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "run" : "nodemon server",
-    "start": "node server" 
+    "run": "nodemon server",
+    "start": "node server"
   },
   "author": "",
   "license": "ISC",
+  "directories": {
+    "lib": "lib"
+  },
   "description": ""
 }
