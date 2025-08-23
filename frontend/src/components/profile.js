@@ -6,9 +6,8 @@ import UserInform from "./userInform";
 const Profile = ()=>{
       const {user , getUser } = useContext(AuthContext);
      const {checkIfUser , connectSocket} = Functions();
-      // console.log("The user logged in from home" , user);
+     
 
-      // connectSocket(user , socket , getSocket);
 
   useEffect(()=>{
     checkIfUser(getUser );

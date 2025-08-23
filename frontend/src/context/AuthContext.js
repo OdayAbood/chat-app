@@ -13,25 +13,23 @@ const AuthContetxProvider = ({children})=>{
     const socketRef = useRef(null);
 
       const connectSocket = ()=>{
-        // console.log("connect")
+        
       if(user._id && !socketRef.current){
             socketRef.current = io("http://localhost:4000" , {
                 query : {
                     userId : user._id
                 }
             });
-            console.log(socketRef.current);
+         
         }
         socketRef.current.on("getOnlineUsers" , (usersId)=>{
             setOnlineUsers(usersId);
-            console.log(usersId);
-            console.log("The online users is : ",onlineUsers);
+        
         })
   }
       const disconnectSocket = ()=>{
-        //   console.log("disconnect")
+     
       if(socketRef.current){
-        console.log(socketRef.current);
             socketRef.current.disconnect();
             socketRef.current = null ;
         }
@@ -44,14 +42,14 @@ const AuthContetxProvider = ({children})=>{
             method : "GET",
             credentials : 'include'
         });
-        // console.log(res);
+       
         const json = await res.json();
 
         if(json.succeed ===true){
             setUsers(json.users);
         }
         else {
-            // console.log(json.mess);
+          
             if(json.succeed === false){
                 // console.log("Error" , json.err);
             }

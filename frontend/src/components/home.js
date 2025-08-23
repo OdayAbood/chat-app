@@ -6,7 +6,7 @@ import { Functions } from '../Lib/functions';
 const Home = ()=>{
      const {user , getUser } = useContext(AuthContext);
      const {checkIfUser , printSocket} = Functions();
-    //   console.log("The user logged in from home" , user);
+    
 
     //   connectSocket(user , socket , getSocket);
 

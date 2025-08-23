@@ -10,13 +10,13 @@ const ChatUi = ()=>{
     const {users , getUsers , user , getUser , socketRef , setSocket , onlineUsers } = useContext(AuthContext);
     const [selectedUser , setSelectedUser] = useState({});
     const {checkIfUser , connectSocket} = Functions();
-    // console.log("from the chat ui",socketRef);
-    if(onlineUsers.length !== 0 ){
+  
+    // if(onlineUsers.length !== 0 ){
 
-        // console.log("the onlineUsers are" , onlineUsers);
-    }
+    //     // console.log("the onlineUsers are" , onlineUsers);
+    // }
 
-    // connectSocket(user , socketRef , getSocket);
+    
     
     useEffect(()=>{
         getUsers();
@@ -28,7 +28,7 @@ const ChatUi = ()=>{
              <div className=" relative top-0 left-0 md:w-80 overflow-y-auto bg-pink-200">
                {(users) ? ( users.map(user=>{
                 return (
-                    <Link key={user._id} onClick={()=>{ setSelectedUser(user); console.log("The selected user ",selectedUser)}} className='flex flex-wrap justify-evenly items-center border-b-2
+                    <Link key={user._id} onClick={()=>{ setSelectedUser(user); }} className='flex flex-wrap justify-evenly items-center border-b-2
               border-pink-700 hover:bg-pink-400 box-border p-3 min-w-32 -translate-x-3 md:w-full transition'>
                      <div className='w-12 h-12 rounded-xl bg-pink-800'></div>
                      <div className="md:font-bold  md:text-clip md:block hidden md:w-36 text-center ">{user.firstname} {user.lastname}</div>

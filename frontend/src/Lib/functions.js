@@ -19,11 +19,11 @@ export const Functions = ()=>{
 
         }
         catch(err){
-            // console.log(err);
+           
         }
     }
     const  userLoggedOut = async ()=>{
-        // console.log("The user logged out roght now");
+    
 
         try{
             const res = await fetch("http://localhost:4000/api/user/logout",{
@@ -31,16 +31,16 @@ export const Functions = ()=>{
                 credentials : 'include',
 
             });
-            // console.log(res);
+          
 
             const json = await res.json() ;
 
-            // console.log(json);
+          
             Authent.disconnectSocket();
 
         }
         catch(err){
-            // console.log(err);
+         
         }
     }
     return {checkIfUser , userLoggedOut } ;

@@ -15,7 +15,7 @@ const signup = async (req , res )=>{
      let hashedPassword ;
 
     const {email , password , lastname , firstname } = req.body ;
-    // console.log("The password is :",password)
+
 
 
     checkIfExist = await User.findOne({email});
@@ -25,14 +25,14 @@ const signup = async (req , res )=>{
     }
     else {
         const salt = await bcrypt.genSalt(10) ; 
-        // console.log("salt",salt);
+     
         if(password && password.length >= 6){
              hashedPassword = await bcrypt.hash(password , salt)
         }
         const user = {email , lastname , firstname , password : hashedPassword}
         try{
             const newUser = await User.create(user);
-            // console.log(newUser)
+            
             res.json({succeed : true , mess : "The user is created" , user : newUser , redirect : "/" })
         }
         catch(error)
@@ -47,7 +47,7 @@ const signin = async (req , res )=>{
 
     const {email , password} = req.body ;
     checkIfExist = await User.findOne({email}) ;
-    // console.log(checkIfExist);
+ 
 
     if(checkIfExist){
         const match =await bcrypt.compare(password , checkIfExist.password);
@@ -58,7 +58,7 @@ const signin = async (req , res )=>{
                 sameSite : "None", 
                 maxAge : 1000 * 60 * 60 * 24 * 7});
 
-            // console.log("req.cookie :",req.cookies.jwt);
+         
             
             return res.json({succeed : true ,  user: checkIfExist , token: req.cookies.jwt})
         } 
@@ -73,13 +73,13 @@ const signin = async (req , res )=>{
 }
 const logOut = async(req,res) =>{
 
-    // console.log("The user cotroller from logout");
+   
 
-    // cpnsole
+
 
      res.cookie("jwt" ,"", { maxAge : 0});
 
-    //  console.log(req.cookies)
+    
     res.status(200).json({succeed : true , mess: "the user log out correctly"}) ;
 }
 

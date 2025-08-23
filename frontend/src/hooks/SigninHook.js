@@ -18,29 +18,29 @@ export const SignInHook = ()=>{
             setIsLodaing(true)
             let jsonRes ; 
             try{
-            // const res = await InstanceAxios.post("/api/user/signin" , user)
+            
             const res = await fetch("http://localhost:4000/api/user/signin",{
             method : "POST" ,
             credentials : 'include' ,
             headers : {"Content-Type" : "application/json"} ,
             body : JSON.stringify(user)
         })
-            // console.log(res);
+          
             const json = await res.json();
-            // console.log(json);
+            
             if(json.succeed){
                 Navigate("/chat");
                   window.location.reload();
                   connectSocket(json.user);
 
-                //   console.log(socket);
+                
             }
             if(res.ok || res.statusText.includes("Error") || res.statusText.includes("Bad") ){
                 setIsLodaing(false);
             }
         }
         catch(err){
-            // console.log(err);
+            
         }
     
         }

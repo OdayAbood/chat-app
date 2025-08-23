@@ -6,7 +6,7 @@ import { AuthContext } from '../context/AuthContext'
 const NavBar = ()=>{
     const {user} = useContext(AuthContext);
 
-    // console.log("The user logged in from the nav" , user);
+  
     return(
         <div className='flex justify-between w-full bg-pink-500 h-10 items-center'>
             <NavLink  to="/" className="ml-5 text-white hover:-translate-y-1 transition font-bold">Home</NavLink>

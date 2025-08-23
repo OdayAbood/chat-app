@@ -20,7 +20,7 @@ function App() {
   useEffect(()=>{
     checkIfUser(getUser);
   })
-  // console.log("The user from app" , user);
+
   return (
     <div className="App">
       <AuthContetxProvider>

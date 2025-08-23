@@ -17,7 +17,7 @@ const MessageContextProvider = ({children})=>{
         
         getMessages(selectedUserId , setMessages);
 
-        // console.log(messages);
+        
     }
 
     const sendMessageContext = (newMesage)=>
@@ -30,9 +30,9 @@ const MessageContextProvider = ({children})=>{
         deleteMessage(message_id);
     }
     const subscribeMessage=(newMesage)=>{
-        // console.log(messages.length);
+        
         setMessages([...messages , newMesage])
-        // console.log(messages.length);
+      
     }
     return (
         <messageContext.Provider value = {{messages , getMessagesContext , sendMessageContext ,

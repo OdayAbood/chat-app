@@ -15,7 +15,7 @@ const SignIn = ()=>{
         // getUser(Theuser);
 
     } 
-    // console.log("The user is" , user)
+
     return(
         <div className='cont'>
             <form className='' onSubmit={handleSubmit}>

@@ -11,7 +11,7 @@ const SignUp = ()=>{
     const handleSubmit = (e)=>{
         e.preventDefault();
         signUp(user);
-        // console.log(user)
+       
     }
     return(
         <div className='cont '>

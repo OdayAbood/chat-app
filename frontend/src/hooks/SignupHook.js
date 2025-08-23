@@ -17,9 +17,9 @@ export const SignupHook = ()=>{
             body : JSON.stringify(user)
 
         })
-        // console.log(res);
+   
         const json = await res.json();
-        // console.log(json);
+ 
         if(json.succeed){
             Navigate(json.redirect)
         }
@@ -28,7 +28,7 @@ export const SignupHook = ()=>{
         }
     }
     catch(err){
-        // console.log(err);
+   
     }
 
     }

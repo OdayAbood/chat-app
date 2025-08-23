@@ -53,13 +53,13 @@ const deleteMessage = async (req , res) =>{
 const updateMessage = async (req , res) =>{
     const id = req.params.id ;
 
-    // console.log("Path : " , req.path , "Id : " , id , "Method : " , req.method)
+
 
     const {messageUpdating } = req.body ;
 
     try{
         const message = await Message.findByIdAndUpdate({_id : id},{message : messageUpdating} , {new : true})
-        // console.log(message)
+    
         res.status(200).json({succeed : true , message});
         io.emit("updateMessage",message)
     }
