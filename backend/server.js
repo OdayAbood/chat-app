@@ -28,7 +28,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended : true}))
 
 app.use(cors({
-    origin : process.env.CLIENT_URL || '*',
+    origin : 'http://localhost:3000',
      credentials : true
 }));
 
@@ -40,11 +40,11 @@ app.use("/api/user" , userRoute) ;
 
 app.use("/api/message" , messageRoute);
 
-app.use(express.static(path.join(__dirname, "../client/build")));
+// app.use(express.static(path.join(__dirname, "../client/build")));
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../client/build/index.html"));
-});
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "../client/build/index.html"));
+// });
 
 mongoose.connect(process.env.MONGODB_URI)
 .then(
