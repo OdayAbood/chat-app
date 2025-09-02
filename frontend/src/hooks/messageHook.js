@@ -18,7 +18,7 @@ export const MessageHook = (socketRef)=>{
 
        
         try{
-            const res = await fetch(`http://localhost:4000/api/message/allmessages/${id}`, {
+            const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/message/allmessages/${id}`, {
                 method: "GET" ,
                 credentials : 'include'
             }) ;
@@ -42,7 +42,7 @@ export const MessageHook = (socketRef)=>{
         
         setLoading(true);
         try {
-            const res = await fetch("http://localhost:4000/api/message/send",
+            const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/message/send`,
                 {
                     method : "POST" , 
                     headers : {"Content-Type" : "application/json"} , 
@@ -71,7 +71,7 @@ export const MessageHook = (socketRef)=>{
         setLoading(true);
        
         try{
-            const res = await fetch(`http://localhost:4000/api/message/update/${id}`,{
+            const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/message/update/${id}`,{
                 method : "PATCH" , 
                 headers : {"Content-Type" : "application/json"},
                 credentials : 'include' ,
@@ -100,7 +100,7 @@ export const MessageHook = (socketRef)=>{
             
         setLoading(true);
         try {
-            const res = await fetch(`http://localhost:4000/api/message/delete/${id}`,{
+            const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/message/delete/${id}`,{
                 method : "DELETE" , 
                 headers : {"Content-Type" : "application/json"} ,
                 credentials : 'include'

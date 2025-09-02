@@ -5,7 +5,7 @@ export const Functions = ()=>{
     const Authent = useContext(AuthContext);
     const checkIfUser = async(getUser)=>{
        try{
-            const res = await fetch("http://localhost:4000/" , {
+            const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/` , {
               method : "GET" ,
               credentials : 'include'
             });
@@ -26,7 +26,7 @@ export const Functions = ()=>{
     
 
         try{
-            const res = await fetch("http://localhost:4000/api/user/logout",{
+            const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/user/logout`,{
                 method : "GET",
                 credentials : 'include',
 

@@ -15,7 +15,7 @@ const AuthContetxProvider = ({children})=>{
       const connectSocket = ()=>{
         
       if(user._id && !socketRef.current){
-            socketRef.current = io("http://localhost:4000" , {
+            socketRef.current = io(`${process.env.REACT_APP_BACKEND_URL}` , {
                 query : {
                     userId : user._id
                 }
@@ -38,7 +38,7 @@ const AuthContetxProvider = ({children})=>{
   
 
     const getUsers = async ()=>{
-        const res = await fetch("http://localhost:4000/api/user/users",{
+        const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/user/users`,{
             method : "GET",
             credentials : 'include'
         });

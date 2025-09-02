@@ -6,6 +6,8 @@ import { Functions } from '../Lib/functions';
 const Home = ()=>{
      const {user , getUser } = useContext(AuthContext);
      const {checkIfUser , printSocket} = Functions();
+
+     console.log(process.env.REACT_APP_BACKEND_URL);
     
 
     //   connectSocket(user , socket , getSocket);
